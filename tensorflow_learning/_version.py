@@ -42,8 +42,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "tensorflow"
-    cfg.versionfile_source = "tensorflow/_version.py"
+    cfg.parentdir_prefix = "tensorflow_learning"
+    cfg.versionfile_source = "tensorflow_learning/_version.py"
     cfg.verbose = False
     return cfg
 

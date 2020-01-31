@@ -23,10 +23,10 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Ricequant",
     author_email="438747096lmz@gmail.com",
-    keywords="tensorflow",
+    keywords="tensorflow_learning",
     url="https://www.mrjstyle.cn/",
     include_package_data=True,
-    packages=find_packages(include=["tensorflow", "tensorflow.*"]),
+    packages=find_packages(include=["tensorflow_learning", "tensorflow_learning.*"]),
     install_requires=requirements,
     python_requires=">=3.6",
     classifiers=[
@@ -41,7 +41,6 @@ setup(
     zip_safe=False,
     entry_points={
         "console_scripts": [
-            #"rqdatad = rqdatad.__main__:main"
         ]
     },
 )
