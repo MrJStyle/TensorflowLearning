@@ -81,6 +81,14 @@ class Graph(object):
         print(tf.where(tf.greater(self.a, self.b), self.a, self.b).eval())
         sess.close()
 
+    @staticmethod
+    def regularization():
+        weights = tf.constant([[1.0, -2.0], [-3.0, 4.0]])
+        with tf.Session() as sess:
+            print(sess.run(tf.keras.regularizers.l1(0.5)(weights)))
+
+            print(sess.run(tf.keras.regularizers.l2(0.5)(weights)))
+
 
 if __name__ == "__main__":
     g = Graph()
@@ -92,3 +100,4 @@ if __name__ == "__main__":
     g.clip_by_value()
     g.log()
     g.select_and_greater()
+    g.regularization()

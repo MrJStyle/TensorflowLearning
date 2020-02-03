@@ -7,16 +7,19 @@ import matplotlib.pyplot as plt
 # Mnist数据集加载
 (x_train_all, y_train_all), (x_test, y_test) = keras.datasets.mnist.load_data()
 # Mnist数据集简单归一化
-x_train_all, x_test = x_train_all / 255.0, x_test / 255.0
+x_train_all, x_test = x_train_all[] / 255.0, x_test / 255.0
 
 x_valid, x_train = x_train_all[:50000], x_train_all[50000:]  #验证集10000个
 y_valid, y_train = y_train_all[:50000], y_train_all[50000:]
 
-#打印一张照片
-# def show_single_image(img_arr):
-#      plt.imshow(img_arr,cmap='binary')
-#      plt.show()
-# show_single_image(x_train[2])
+
+# 打印一张照片
+def show_single_image(img_arr):
+    plt.imshow(img_arr,cmap='binary')
+    plt.show()
+
+
+show_single_image(x_train[2])
 
 # 将模型的各层堆叠起来，以搭建 tf.keras.Sequential 模型。为训练选择优化器和损失函数：
 model = models.Sequential([layers.Flatten(input_shape=(28, 28)),
@@ -33,7 +36,7 @@ model.summary()
 print(len(model.layers))
 # 训练模型
 history = model.fit(x_train, y_train, epochs=20, validation_freq=1,
-                  validation_data=(x_valid,y_valid))
+                  validation_data=(x_valid, y_valid))
 # 验证模型：
 model.evaluate(x_test,  y_test, verbose=2)
 
