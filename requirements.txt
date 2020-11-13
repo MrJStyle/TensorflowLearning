@@ -2,4 +2,4 @@
 # exhaustive listing of pinned versions for the purpose of achieving repeatable
 # installations of a complete environment.
 
-tensorflow==2.1.0
+tensorflow==2.3.1
